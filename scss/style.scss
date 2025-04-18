@@ -1,0 +1,62 @@
+@import "./partials/bootstrap-overrides.scss";
+
+body {
+  background-color: $dark;
+  color: white;
+  font-family: Helvetica, sans-serif;
+}
+nav {
+  .logo {
+    transform: translateX(-16px);
+  }
+  i {
+    font-size: 0.9rem;
+  }
+  button {
+    color: white;
+    font-size: 0.7rem;
+    border: 0;
+    background-color: transparent;
+  }
+}
+
+section i {
+  padding-inline: 0.5rem;
+  font-size: 0.7rem;
+}
+.mt-6 {
+  margin-top: 10rem;
+}
+.gap-6 {
+  gap: 6.5rem;
+}
+
+footer {
+  font-size: 13px;
+  i {
+    margin-right: 1rem;
+    font-size: 1.9rem;
+  }
+  .col {
+    margin-block: 0.8rem;
+  }
+  button {
+    margin-block: 1rem;
+    font-size: 0.8rem !important;
+  }
+}
+
+.form-check-input:checked {
+  background-color: $dark;
+  border-color: $dark;
+}
+
+.colImg {
+  position: relative;
+}
+
+.pen {
+  position: absolute;
+  bottom: 208px;
+  left: 23px;
+}

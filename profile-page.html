@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/dist/css/style.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <title>Profile Page</title>
+  </head>
+  <body>
+    <header class="p-2">
+      <img width="110" src="./assets/netflix_logo.png" alt="netflix_logo" />
+    </header>
+
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column">
+          <h1 class="border-bottom border-secondary">Edit Profile</h1>
+          <div class="row">
+            <div class="colImg col-auto">
+              <img width="150px" src="./assets/avatar.png" alt="" />
+             <button type="button" class="pen btn btn-dark rounded-pill"><i class="bi bi-pencil-fill"></i></button>
+            </div>
+            <div class="col-auto">
+              <div class="col border-bottom border-secondary">
+                <span class="badge text-bg-secondary">Strive Student</span>
+                <div class="dropdown">
+                  <h4>Languages:</h4>
+                  <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">English</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                    <li><a class="dropdown-item" href="#">Italian</a></li>
+                    <li><a class="dropdown-item" href="#">French</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col border-bottom border-secondary">
+                <h4>Maturity Settings:</h4>
+                <h4 class="badge text-bg-secondary">ALL MANURITY RATINGS</h4>
+                <p>Show titles of all maturity for this profile.</p>
+                <button type="button" class="btn btn-outline-secondary">EDIT</button>
+              </div>
+              <div class="col">
+                <h4>Autoplay controls</h2>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                  <label class="form-check-label" for="checkDefault"> Autoplay next episode in a series on all devices. </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked />
+                  <label class="form-check-label" for="checkChecked"> Autoplay previews while browsing on all devices. </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button type="button" class="btn btn-outline-secondary">SAVE</button>
+            <button type="button" class="btn btn-outline-secondary">CANCEL</button>
+            <button type="button" class="btn btn-outline-secondary">DELETE PROFILE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
+      integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
