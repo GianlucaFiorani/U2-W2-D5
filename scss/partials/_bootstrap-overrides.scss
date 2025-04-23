@@ -7,6 +7,7 @@
 // 2. Include any default variable overrides here
 $dark: #141414;
 $secondary: #808080;
+$info: #6596d8;
 
 $grid-gutter-width: 0.5rem;
 $btn-padding-x: 0.3rem;
@@ -18,9 +19,11 @@ $btn-font-size: 20px;
 @import "../../bootstrap/scss/variables";
 @import "../../bootstrap/scss/variables-dark";
 // 4. Include any default map overrides here
-$nav-link-color: white;
-$card-bg: $dark;
-$card-color: $info;
+
+$grid-breakpoints-additional: (
+  xxs: 480px,
+);
+$grid-breakpoints: map-merge($grid-breakpoints, $grid-breakpoints-additional);
 
 // 5. Include remainder of required parts
 @import "../../bootstrap/scss/maps";

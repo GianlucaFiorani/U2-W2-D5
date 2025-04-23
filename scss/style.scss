@@ -57,12 +57,42 @@ footer {
 
 .pen {
   position: absolute;
-  bottom: 326px;
-  left: 17px;
+  bottom: 8px;
+  left: 6px;
   font-size: 0.5rem;
   width: 40px;
   height: 40px;
 }
 .fs-7 {
   font-size: 15px !important;
+}
+
+main {
+  height: 100%;
+  background-color: white;
+  color: $secondary;
+  .container {
+    max-width: 950px;
+    margin-top: 2rem;
+  }
+  .row {
+    flex-direction: column;
+  }
+  p,
+  h5 {
+    margin: 0;
+    margin-top: 4px;
+  }
+}
+
+.slick-next:before,
+.slick-prev:before {
+  color: red;
+  font-weight: 450;
+  font-size: 2rem;
+  font-family: "DM Sans", sans-serif;
+  content: ">";
+}
+.slick-prev:before {
+  content: "<";
 }

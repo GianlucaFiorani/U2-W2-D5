@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/dist/css/style.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
     <title>Profile Page</title>
   </head>
@@ -18,17 +18,21 @@
         <div class="d-flex flex-column">
           <h1 class="border-bottom border-secondary">Edit Profile</h1>
           <div class="row">
-            <div class="colImg col-auto">
-              <img width="150px" src="./assets/avatar.png" alt="" />
-             <button type="button" class="pen btn btn-dark rounded-pill border-white fs-6 mt-2 me-2pill p-2"><i class="bi bi-pencil-fill fs-7"></i></button>
+            <div class="col-auto">
+              <div class="colImg">
+                <img width="150px" src="./assets/avatar.png" alt="" />
+                <button type="button" class="pen btn btn-dark rounded-pill border-white fs-6 mt-2 me-2pill p-2"><i class="bi bi-pencil-fill fs-7"></i></button>
+              </div>
             </div>
             <div class="col-auto">
               <div class="col m-2 border-bottom border-secondary">
-                <h4 class="bg-secondary p-2">Strive Student</h4>
+                <h4 class="bg-secondary bg-opacity-75 p-2">Strive Student</h4>
                 <div class="dropdown">
                   <h4 class="mt-3">Languages:</h4>
-                  <button class="btn btn-outline-light dropdown-toggle mb-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">English</button>
-                  <ul class="dropdown-menu">
+                  <button class="btn btn-outline-light rounded-0 dropdown-toggle fs-6 py-0 mb-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="pe-3"> English </span>
+                  </button>
+                  <ul class="dropdown-menu" data-bs-theme="dark">
                     <li><a class="dropdown-item" href="#">English</a></li>
                     <li><a class="dropdown-item" href="#">Italian</a></li>
                     <li><a class="dropdown-item" href="#">French</a></li>
@@ -37,12 +41,12 @@
               </div>
               <div class="col m-2 border-bottom border-secondary">
                 <h4 class="mt-3">Maturity Settings:</h4>
-                <h4 class="badge text-bg-secondary">ALL MANURITY RATINGS</h4>
+                <h4 class="badge text-light rounded-0 text-bg-secondary bg-opacity-25 fs-6 py-2">ALL MANURITY RATINGS</h4>
                 <p>Show titles of all maturity for this profile.</p>
-                <button type="button" class="btn btn-outline-secondary fs-6 mb-4 me-2">EDIT</button>
+                <button type="button" class="btn btn-outline-secondary rounded-0 fs-6 p-1 px-3 my-2 mb-4">EDIT</button>
               </div>
               <div class="col m-2">
-                <h4 class="mt-3">Autoplay controls</h2>
+                <h4 class="mt-3">Autoplay controls</h4>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
                   <label class="form-check-label" for="checkDefault"> Autoplay next episode in a series on all devices. </label>
@@ -55,18 +59,19 @@
             </div>
           </div>
           <div>
-            <div class="row justify-content-between">
+            <div class="row justify-content-between border-top border-secondary mt-4 pt-4">
               <div class="col-auto">
-
-                <button type="button" class="btn btn-outline-secondary fs-6 mt-2 me-2">SAVE</button>
+                <a class="link-underline link-underline-opacity-0" href="index.html">
+                  <button type="button" class="btn btn-outline-secondary rounded-0 fs-4 p-2 px-1 px-xxs-4 mt-2 me-sm-2 mb-4">SAVE</button>
+                </a>
               </div>
               <div class="col-auto">
-
-                <button type="button" class="btn btn-outline-secondary fs-6 mt-2 me-2">CANCEL</button>
+                <a class="link-underline link-underline-opacity-0" href="index.html">
+                  <button type="button" class="btn btn-outline-secondary rounded-0 fs-4 p-2 px-1 px-xxs-4 mt-2 me-sm-2 mb-4">CANCEL</button>
+                </a>
               </div>
               <div class="col-auto">
-
-                <button type="button" class="btn btn-outline-secondary fs-6 mt-2 me-2">DELETE PROFILE</button>
+                <button type="button" class="btn btn-outline-secondary rounded-0 fs-4 p-2 px-1 px-xxs-4 mt-2 me-sm-2 mb-4">DELETE PROFILE</button>
               </div>
             </div>
           </div>

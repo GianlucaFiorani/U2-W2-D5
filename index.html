@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/dist/css/style.min.css" /> 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="./assets/dist/css/style.min.css" />
     <title>Netflix</title>
   </head>
   <body>
     <div class="container">
-      <nav class="navbar navbar-expand-lg bg-dark  sticky-top" data-bs-theme="dark">
+      <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
         <div class="container-fluid">
           <img class="logo" width="110" src="./assets/netflix_logo.png" alt="netflix_logo" />
           <button
@@ -41,91 +43,133 @@
                 <a class="nav-link" href="#">My List</a>
               </li>
             </ul>
-            
-                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
-                    <i class="bi bi-search me-2"></i>
-                </button>
-              
-              <div>
-                <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                  
-                    <form class="d-flex" role="search">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    </form>
-                </div>
-              </div>
-              <botton>KIDS</botton>
-              <button><i class="bi bi-bell-fill me-2"></i></button>
+
+            <button
+              class="btn"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseWidthExample"
+              aria-expanded="false"
+              aria-controls="collapseWidthExample"
+            >
+              <i class="bi bi-search me-2"></i>
+            </button>
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              </form>
+            </div>
+            <botton role="button" class="d-block text-secondary">KIDS</botton>
+            <button><i class="bi bi-bell-fill me-2"></i></button>
             <div class="d-flex">
-                <div class="dropdown me-1" data-bs-theme="dark">
-                  <button type="button" class="btn btn-dark rounded-0 dropdown-toggle p-0" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
-                    <img width="35" src="./assets/avatar.png" alt="">
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="./profile-page.html">Account</a></li>
-                    <li><a class="dropdown-item" href="./settings-page.html">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">About us</a></li>
-                  </ul>
-                </div>
+              <div class="dropdown me-1" data-bs-theme="dark">
+                <button type="button" class="btn btn-dark rounded-0 dropdown-toggle p-0" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+                  <img width="35" src="./assets/avatar.png" alt="" />
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./profile-page.html">Account</a></li>
+                  <li><a class="dropdown-item" href="./settings-page.html">Settings</a></li>
+                  <li><a class="dropdown-item" href="./sing-in.html">Sing out</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
 
-    <section class="mt-4">
-          <div class="d-flex justify-content-between">
-            <div class="d-flex align-items-center gap-5">
-              <h1>Tv Shows</h1>
-              <div class="dropdown">
-                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" ><span class="me-4">Generes</span></button>
-                <ul class="dropdown-menu" data-bs-theme="dark">
-                  <li><a class="dropdown-item" href="#">Thriller</a></li>
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Suspense</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="btn-group align-items-center" role="group" aria-label="Basic outlined example">
-              <button type="button" class="btn btn-outline-light"><i class="bi bi-border-width"></i></button>
-              <button type="button" class="btn btn-outline-light"><i class="bi bi-grid-fill"></i></button>
+      <section class="mt-4">
+        <div class="d-flex justify-content-between">
+          <div class="d-flex align-items-center gap-5">
+            <h1>Tv Shows</h1>
+            <div class="dropdown">
+              <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="me-4">Generes</span>
+              </button>
+              <ul class="dropdown-menu" data-bs-theme="dark">
+                <li><a class="dropdown-item" href="#">Thriller</a></li>
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Suspense</a></li>
+              </ul>
             </div>
           </div>
-    </section>
+          <div class="btn-group align-items-center" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" />
+            <label id="btn-swich" class="btn btn-outline-secondary fs-6" for="btnradio1"><i class="bi bi-border-width"></i></label>
 
-     <section class="mt-5">
-          <h2>Watch It Again</h2>
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media0.webp" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media1.jpg" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media2.webp" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media3.webp" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media4.jpg" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media5.webp" alt="" /></div>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked />
+            <label class="btn btn-outline-secondary fs-6" for="btnradio2"><i class="bi bi-grid-fill"></i></label>
           </div>
-     </section>
+        </div>
+      </section>
 
-     <section class="mt-5">
-          <h2>New Releseases</h2>
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media6.jpg" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media7.webp" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media8.webp" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media9.jpg" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media10.jpg" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media11.jpg" alt="" /></div>
-          </div>
-     </section>
+      <section class="grid mt-5">
+        <h2>Watch It Again</h2>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media0.webp" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media1.jpg" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media2.webp" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media3.webp" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media4.jpg" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media5.webp" alt="" /></div>
+        </div>
+      </section>
+      <section class="carousel mt-5 d-none">
+        <h2>Watch It Again</h2>
+        <div class="variable-width">
+          <div><img width="100%" src="./assets/media/media0.webp" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media1.jpg" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media2.webp" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media3.webp" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media4.jpg" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media5.webp" alt="" /></div>
+        </div>
+      </section>
 
-    <section class="mt-5">
-          <h2>Trending Now</h2>
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media12.jpg" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media13.jpg" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media14.webp" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media15.jpg" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media16.webp" alt="" /></div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media17.jpg" alt="" /></div>
-          </div>
-    </section>
+      <section class="grid mt-5">
+        <h2>New Releseases</h2>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media6.jpg" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media7.webp" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media8.webp" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media9.jpg" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media10.jpg" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media11.jpg" alt="" /></div>
+        </div>
+      </section>
+      <section class="carousel mt-5 d-none">
+        <h2>New Releseases</h2>
+        <div class="variable-width">
+          <div><img width="100%" src="./assets/media/media6.jpg" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media7.webp" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media8.webp" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media9.jpg" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media10.jpg" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media11.jpg" alt="" /></div>
+        </div>
+      </section>
+
+      <section class="grid mt-5">
+        <h2>Trending Now</h2>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media12.jpg" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media13.jpg" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media14.webp" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media15.jpg" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media16.webp" alt="" /></div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-2"><img width="100%" src="./assets/media/media17.jpg" alt="" /></div>
+        </div>
+      </section>
+      <section class="carousel mt-5 d-none">
+        <h2>Trending Now</h2>
+        <div class="variable-width">
+          <div><img width="100%" src="./assets/media/media12.jpg" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media13.jpg" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media14.webp" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media15.jpg" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media16.webp" alt="" /></div>
+          <div><img width="100%" src="./assets/media/media17.jpg" alt="" /></div>
+        </div>
+      </section>
 
       <footer class="d-flex justify-content-center text-secondary mb-2 mt-6">
         <div class="d-flex flex-column">
@@ -171,5 +215,55 @@
       integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script>
+      const btn = document.getElementById("btnradio1");
+      const btn2 = document.getElementById("btnradio2");
+      const grid = document.querySelectorAll(".grid");
+      const carousel = document.querySelectorAll(".carousel");
+
+      const slider = $(".variable-width");
+      slider.slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        variableWidth: true,
+        swipeToSlide: true,
+      });
+
+      slider.on("wheel", function (e) {
+        if (e.altKey) {
+          e.preventDefault();
+          if (e.originalEvent.deltaY < 0) {
+            $(this).slick("slickNext");
+          } else {
+            $(this).slick("slickPrev");
+          }
+        }
+      });
+
+      btn.onclick = function () {
+        grid.forEach((div) => {
+          div.classList.add("d-none");
+        });
+        carousel.forEach((div) => {
+          div.classList.remove("d-none");
+        });
+      };
+
+      btn2.onclick = function () {
+        grid.forEach((div) => {
+          div.classList.remove("d-none");
+        });
+        carousel.forEach((div) => {
+          div.classList.add("d-none");
+        });
+      };
+    </script>
   </body>
 </html>
