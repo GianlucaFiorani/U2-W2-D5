@@ -11,50 +11,88 @@
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
     <link rel="stylesheet" href="./assets/dist/css/style.min.css" />
-    <title>Sing-in</title>
+    <title>Sign-in</title>
   </head>
   <body>
-    <header class="p-2">
-      <img width="110" src="./assets/netflix_logo.png" alt="netflix_logo" />
-    </header>
+    <div class="signIn-main">
+      <header class="p-2">
+        <img width="210" src="./assets/netflix_logo.png" alt="netflix_logo" />
+      </header>
 
-    <div class="container">
-      <section class="carousel mt-5">
-        <h2>Watch It Again</h2>
-        <div class="variable-width">
-          <div><img width="100%" src="./assets/media/media0.webp" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media1.jpg" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media2.webp" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media3.webp" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media4.jpg" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media5.webp" alt="" /></div>
+      <div class="d-flex justify-content-center">
+        <div class="signIn bg-dark bg-opacity-75 p-5 mb-5">
+          <h2>Sign In</h2>
+          <div class="alert bg-warning text-dark d-none" role="alert">
+            Sorry, we can't find an account with this email address. Please try again or <a class="text-dark" href="#">create a new account.</a>
+          </div>
+          <form data-bs-theme="dark">
+            <div class="mb-3 mt-3">
+              <input
+                type="text"
+                class="form-control p-3 mb-2"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Email address or mobile number"
+              />
+              <p class="mailErr text-danger d-none"><i class="bi bi-x-circle me-2"></i>Please enter a valid email or phone number.</p>
+            </div>
+            <div class="mb-3">
+              <div id="psw-display">
+                <div id="passwordBox">
+                  <input type="password" class="form-control p-3 mb-2" id="exampleInputPassword1" placeholder="Password" />
+                  <div id="eyes"><i class="bi bi-eye"></i> <i class="bi bi-eye-slash"></i></div>
+                </div>
+                <p class="pswErr text-danger d-none"><i class="bi bi-x-circle me-2"></i>Your password must contain between 4 and 60 characters.</p>
+              </div>
+              <div class="d-flex justify-content-center"><p class="btn-msg text-secondary d-none">Message and data rates may apply</p></div>
+            </div>
+            <button type="submit" id="submit" class="btn btn-danger container-fluid p-3">Sign In</button>
+            <div class="d-flex justify-content-center m-4"><h5>OR</h5></div>
+            <button type="button" id="btn-code" class="btn btn-dark bg-secondary bg-opacity-25 container-fluid p-3">Use a Sign-In Code</button>
+            <div class="d-flex justify-content-center m-4">
+              <a class="text-light fs-5" href="https://www.wikihow.com/Remember-a-Forgotten-Password">Forgot password?</a>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+              <label class="form-check-label fs-5" for="exampleCheck1">Remember me</label>
+            </div>
+            <p class="text-secondary fs-5">
+              New to Netflix?
+              <a class="text-light link-light link-underline link-underline-opacity-0 link-underline-opacity-100-hover" href="#"> Sign up now. </a>
+            </p>
+            <p>This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
+            <a href="">Learn more</a>
+          </form>
         </div>
-      </section>
-
-      <section class="carousel mt-5 d-none">
-        <h2>New Releseases</h2>
-        <div class="variable-width">
-          <div><img width="100%" src="./assets/media/media6.jpg" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media7.webp" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media8.webp" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media9.jpg" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media10.jpg" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media11.jpg" alt="" /></div>
-        </div>
-      </section>
-
-      <section class="carousel mt-5 d-none">
-        <h2>Trending Now</h2>
-        <div class="variable-width">
-          <div><img width="100%" src="./assets/media/media12.jpg" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media13.jpg" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media14.webp" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media15.jpg" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media16.webp" alt="" /></div>
-          <div><img width="100%" src="./assets/media/media17.jpg" alt="" /></div>
-        </div>
-      </section>
+      </div>
     </div>
+
+    <footer class="d-flex text-secondary mb-4 mt-3 pt-5">
+      <div class="container flex-column px-5">
+        <div>Questions? Contact us.</div>
+        <div class="row">
+          <div class="col-3">
+            <div class="col">FAQ</div>
+            <div class="col">Cookie Preferences</div>
+          </div>
+          <div class="col-3">
+            <div class="col">Help Center</div>
+            <div class="col">Corporate Information</div>
+          </div>
+          <div class="col-3">
+            <div class="col">Terms of Use</div>
+            <div class="col">Ad Choices</div>
+          </div>
+          <div class="col-3">
+            <div class="col">Privacy</div>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-outline-secondary">Service Code</button>
+          <p>@ 1997-2019 Netflix Inc.</p>
+        </div>
+      </div>
+    </footer>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -72,28 +110,181 @@
     ></script>
 
     <script type="text/javascript">
-      const slider = $(".variable-width");
-      slider.slick({
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
+      const mail = document.getElementById("exampleInputEmail1");
+      const password = document.getElementById("exampleInputPassword1");
+      const pswD = document.getElementById("psw-display");
+      const btn = document.getElementById("btn-code");
+      const submit = document.getElementById("submit");
+      const eyes = document.getElementById("eyes");
+      const form = document.querySelector("form");
+      const banner = document.querySelector(".alert");
+      const pswErr = document.querySelector(".pswErr");
+      const mailErr = document.querySelector(".mailErr");
+      const forgot = document.querySelector("a.text-light");
+      const msg = document.querySelector(".btn-msg");
+      const eyeSlash = document.querySelector(".bi-eye-slash");
+      const dimH = document.querySelector(".signIn-main");
+      let mailTest = false;
+      let pswTest = false;
+      let interval;
+      let x = 1;
+      pswMinLenght = function () {
+        if (password.value.length < 4) {
+          password.classList.add("border-danger");
+          pswErr.classList.remove("d-none");
+        } else {
+          password.classList.remove("border-danger");
+          pswErr.classList.add("d-none");
+        }
+      };
+      mailVerify = function () {
+        if (!mail.value.includes("@")) {
+          mail.classList.add("border-danger");
+          mailErr.classList.remove("d-none");
+        } else {
+          mail.classList.remove("border-danger");
+          mailErr.classList.add("d-none");
+        }
+      };
 
-        // centerMode: true,
-        variableWidth: true,
-      });
+      btn.onclick = function (e) {
+        pswD.classList.toggle("d-none");
+        msg.classList.toggle("d-none");
+        if (pswD.classList.contains("d-none")) {
+          btn.innerText = "Use password";
+          submit.innerText = "Send Sign-In Code";
+          forgot.innerText = "Forgot Email or Phone Number?";
+        } else {
+          btn.innerText = "Use a Sign-In Code";
+          forgot.innerText = "Forgot password?";
+        }
+      };
 
-      slider.on("wheel", function (e) {
-        e.preventDefault();
-        if (e.altKey) {
-          if (e.originalEvent.deltaY < 0) {
-            x = 1;
-            $(this).slick("slickNext");
+      eyes.onclick = function (e) {
+        eyeSlash.classList.toggle("opacity-0");
+        if (password.type === "password") {
+          password.type = "text";
+        } else {
+          password.type = "password";
+        }
+      };
+
+      mail.onblur = function (e) {
+        if (isNaN(mail.value)) {
+          setTimeout(() => {
+            mailVerify();
+          }, 10);
+        } else {
+          if (mail.value.length !== 10) {
+            mail.classList.add("border-danger");
+            mailErr.classList.remove("d-none");
           } else {
-            $(this).slick("slickPrev");
+            mail.classList.remove("border-danger");
+            mailErr.classList.add("d-none");
           }
         }
+      };
+
+      mail.onfocus = function (e) {
+        mailErr.classList.add("d-none");
+        mail.addEventListener("keyup", function (event) {
+          console.log(event.key);
+          console.log(isNaN(parseInt(event.key)));
+          if (isNaN(mail.value)) {
+            console.log(isNaN(parseInt(event.key)));
+            if (isNaN(parseInt(event.key))) {
+              if (event.key === `Backspace`) {
+                mailVerify();
+              } else if (event.key === "Alt") {
+                if (mail.value.includes("@")) {
+                  mail.classList.remove("border-danger");
+                  mailErr.classList.add("d-none");
+                }
+              }
+            }
+          } else {
+            mail.classList.remove("border-danger");
+            mailErr.classList.add("d-none");
+            if (mail.value.length > 10) {
+              mail.classList.add("border-danger");
+              mailErr.classList.remove("d-none");
+            }
+            if (event.key === `Backspace`) {
+              if (mail.value.length < 10) {
+                mail.classList.add("border-danger");
+                mailErr.classList.remove("d-none");
+              }
+            }
+          }
+        });
+      };
+
+      password.onblur = function (e) {
+        setTimeout(() => {
+          pswMinLenght();
+        }, 10);
+      };
+
+      password.onfocus = function (e) {
+        pswErr.classList.add("d-none");
+        password.addEventListener("keyup", function (event) {
+          if (event.key === `Backspace`) {
+            if (password.value.length < 4) {
+              password.classList.add("border-danger");
+              pswErr.classList.remove("d-none");
+            }
+          } else {
+            if (password.value.length > 3) {
+              password.classList.remove("border-danger");
+              pswErr.classList.add("d-none");
+            }
+          }
+        });
+      };
+
+      form.onsubmit = function (e) {
+        e.preventDefault();
+
+        if (password.value.length > 3) {
+          if (mail.value === "student@strive.school" || mail.value === "321 044 1279") {
+            dimH.classList.remove("dinHeight");
+            banner.classList.add("d-none");
+            mailTest = true;
+          } else {
+            mailTest = false;
+            dimH.classList.add("dinHeight");
+            banner.classList.remove("d-none");
+          }
+          if (password.value === "epicode25!") {
+            pswTest = true;
+          } else {
+            pswTest = false;
+            password.classList.add("shake");
+            setTimeout(() => {
+              password.classList.add("border-danger");
+            }, 11);
+            setTimeout(() => {
+              password.classList.remove("shake");
+            }, 300);
+          }
+
+          if (pswTest && mailTest) {
+            console.log("correct");
+            localStorage.setItem("verify", x);
+            window.location.href = "index.html";
+          }
+        } else {
+          pswMinLenght();
+          pswTest = false;
+          password.classList.add("shake");
+          setTimeout(() => {
+            password.classList.remove("shake");
+          }, 300);
+        }
+      };
+
+      window.addEventListener("DOMContentLoaded", function () {
+        localStorage.clear();
       });
     </script>
   </body>

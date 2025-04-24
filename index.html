@@ -219,10 +219,14 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script>
+      let recivedVerify = localStorage.getItem("verify");
       const btn = document.getElementById("btnradio1");
       const btn2 = document.getElementById("btnradio2");
       const grid = document.querySelectorAll(".grid");
       const carousel = document.querySelectorAll(".carousel");
+      if (!recivedVerify) {
+        window.location.href = "sing-in.html";
+      }
 
       const slider = $(".variable-width");
       slider.slick({

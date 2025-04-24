@@ -198,26 +198,6 @@
       </div>
     </main>
 
-    <!-- <div class="variable-width">
-      <div>your content</div>
-      <div>your content</div>
-      <div>your content</div>
-    </div> -->
-
-    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
-
-    <script>
-      $(".variable-width").slick({
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        centerMode: true,
-        variableWidth: true,
-      });
-    </script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -228,5 +208,11 @@
       integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
       crossorigin="anonymous"
     ></script>
+    <script>
+      let recivedVerify = localStorage.getItem("verify");
+      if (!recivedVerify) {
+        window.location.href = "sing-in.html";
+      }
+    </script>
   </body>
 </html>
