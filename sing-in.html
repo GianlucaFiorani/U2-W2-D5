@@ -34,7 +34,7 @@
                 aria-describedby="emailHelp"
                 placeholder="Email address or mobile number"
               />
-              <p class="mailErr text-danger d-none"><i class="bi bi-x-circle me-2"></i>Please enter a valid email or phone number.</p>
+              <p class="mailErr text-danger d-none"><i class="bi bi-x-circle me-2"></i><span id="ml">Please enter a valid email or phone number.</span></p>
             </div>
             <div class="mb-3">
               <div id="psw-display">
@@ -115,6 +115,7 @@
       const pswD = document.getElementById("psw-display");
       const btn = document.getElementById("btn-code");
       const submit = document.getElementById("submit");
+      const errChange = document.getElementById("ml");
       const eyes = document.getElementById("eyes");
       const form = document.querySelector("form");
       const banner = document.querySelector(".alert");
@@ -124,6 +125,9 @@
       const msg = document.querySelector(".btn-msg");
       const eyeSlash = document.querySelector(".bi-eye-slash");
       const dimH = document.querySelector(".signIn-main");
+      const def = "Please enter a valid email or phone number.";
+      const ph = "Please enter a valid phone number.";
+      const ml = "Please enter a valid email.";
       let mailTest = false;
       let pswTest = false;
       let interval;
@@ -170,12 +174,13 @@
       };
 
       mail.onblur = function (e) {
-        if (isNaN(mail.value)) {
+        if (isNaN(mail.value.replaceAll(" ", ""))) {
           setTimeout(() => {
             mailVerify();
           }, 10);
         } else {
-          if (mail.value.length !== 10) {
+          console.log("number");
+          if (mail.value.replaceAll(" ", "").length !== 10) {
             mail.classList.add("border-danger");
             mailErr.classList.remove("d-none");
           } else {
@@ -183,42 +188,44 @@
             mailErr.classList.add("d-none");
           }
         }
-      };
 
-      mail.onfocus = function (e) {
-        mailErr.classList.add("d-none");
-        mail.addEventListener("keyup", function (event) {
-          console.log(event.key);
-          console.log(isNaN(parseInt(event.key)));
-          if (isNaN(mail.value)) {
-            console.log(isNaN(parseInt(event.key)));
-            if (isNaN(parseInt(event.key))) {
-              if (event.key === `Backspace`) {
-                mailVerify();
-              } else if (event.key === "Alt") {
-                if (mail.value.includes("@")) {
-                  mail.classList.remove("border-danger");
-                  mailErr.classList.add("d-none");
+        mail.onfocus = function (e) {
+          mailErr.classList.add("d-none");
+          mail.addEventListener("keyup", function (event) {
+            if (isNaN(mail.value.replaceAll(" ", ""))) {
+              errChange.innerText = ml;
+              if (isNaN(parseInt(event.key))) {
+                if (event.key === `Backspace`) {
+                  mailVerify();
+                } else if (event.key === "Alt") {
+                  if (mail.value.includes("@")) {
+                    mail.classList.remove("border-danger");
+                    mailErr.classList.add("d-none");
+                  }
                 }
               }
-            }
-          } else {
-            mail.classList.remove("border-danger");
-            mailErr.classList.add("d-none");
-            if (mail.value.length > 10) {
-              mail.classList.add("border-danger");
-              mailErr.classList.remove("d-none");
-            }
-            if (event.key === `Backspace`) {
-              if (mail.value.length < 10) {
+            } else {
+              if (!mail.value) {
+                errChange.innerText = def;
+              } else {
+                errChange.innerText = ph;
+              }
+              mail.classList.remove("border-danger");
+              mailErr.classList.add("d-none");
+              if (mail.value.replaceAll(" ", "").length > 10) {
                 mail.classList.add("border-danger");
                 mailErr.classList.remove("d-none");
               }
+              if (event.key === `Backspace`) {
+                if (mail.value.replaceAll(" ", "").length < 10) {
+                  mail.classList.add("border-danger");
+                  mailErr.classList.remove("d-none");
+                }
+              }
             }
-          }
-        });
+          });
+        };
       };
-
       password.onblur = function (e) {
         setTimeout(() => {
           pswMinLenght();
@@ -246,7 +253,7 @@
         e.preventDefault();
 
         if (password.value.length > 3) {
-          if (mail.value === "student@strive.school" || mail.value === "321 044 1279") {
+          if (mail.value === "student@strive.school" || mail.value.replaceAll(" ", "") === "321 044 1279") {
             dimH.classList.remove("dinHeight");
             banner.classList.add("d-none");
             mailTest = true;
