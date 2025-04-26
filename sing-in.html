@@ -188,44 +188,45 @@
             mailErr.classList.add("d-none");
           }
         }
+      };
 
-        mail.onfocus = function (e) {
-          mailErr.classList.add("d-none");
-          mail.addEventListener("keyup", function (event) {
-            if (isNaN(mail.value.replaceAll(" ", ""))) {
-              errChange.innerText = ml;
-              if (isNaN(parseInt(event.key))) {
-                if (event.key === `Backspace`) {
-                  mailVerify();
-                } else if (event.key === "Alt") {
-                  if (mail.value.includes("@")) {
-                    mail.classList.remove("border-danger");
-                    mailErr.classList.add("d-none");
-                  }
-                }
-              }
-            } else {
-              if (!mail.value) {
-                errChange.innerText = def;
-              } else {
-                errChange.innerText = ph;
-              }
-              mail.classList.remove("border-danger");
-              mailErr.classList.add("d-none");
-              if (mail.value.replaceAll(" ", "").length > 10) {
-                mail.classList.add("border-danger");
-                mailErr.classList.remove("d-none");
-              }
+      mail.onfocus = function (e) {
+        mailErr.classList.add("d-none");
+        mail.addEventListener("keyup", function (event) {
+          if (isNaN(mail.value.replaceAll(" ", ""))) {
+            errChange.innerText = ml;
+            if (isNaN(parseInt(event.key))) {
               if (event.key === `Backspace`) {
-                if (mail.value.replaceAll(" ", "").length < 10) {
-                  mail.classList.add("border-danger");
-                  mailErr.classList.remove("d-none");
+                mailVerify();
+              } else if (event.key === "Alt") {
+                if (mail.value.includes("@")) {
+                  mail.classList.remove("border-danger");
+                  mailErr.classList.add("d-none");
                 }
               }
             }
-          });
-        };
+          } else {
+            if (!mail.value) {
+              errChange.innerText = def;
+            } else {
+              errChange.innerText = ph;
+            }
+            mail.classList.remove("border-danger");
+            mailErr.classList.add("d-none");
+            if (mail.value.replaceAll(" ", "").length > 10) {
+              mail.classList.add("border-danger");
+              mailErr.classList.remove("d-none");
+            }
+            if (event.key === `Backspace`) {
+              if (mail.value.replaceAll(" ", "").length < 10) {
+                mail.classList.add("border-danger");
+                mailErr.classList.remove("d-none");
+              }
+            }
+          }
+        });
       };
+
       password.onblur = function (e) {
         setTimeout(() => {
           pswMinLenght();
@@ -251,9 +252,8 @@
 
       form.onsubmit = function (e) {
         e.preventDefault();
-
         if (password.value.length > 3) {
-          if (mail.value === "student@strive.school" || mail.value.replaceAll(" ", "") === "321 044 1279") {
+          if (mail.value === "student@strive.school" || mail.value.replaceAll(" ", "") === "3210441279") {
             dimH.classList.remove("dinHeight");
             banner.classList.add("d-none");
             mailTest = true;
